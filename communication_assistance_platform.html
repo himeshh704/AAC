@@ -1,0 +1,1450 @@
+<!-- ...existing code... -->
+<style>
+    /* Improved Design Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(120deg, #667eea 0%, #764ba2 100%);
+        color: #222;
+        line-height: 1.7;
+        transition: background 0.5s, color 0.5s;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    header {
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(12px);
+        padding: 1.2rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 24px rgba(102, 126, 234, 0.08);
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #764ba2;
+        letter-spacing: 2px;
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2.5rem;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    .nav-links a:hover {
+        background: #667eea;
+        color: #fff;
+    }
+
+    main {
+        margin-top: 90px;
+        padding: 2.5rem 0;
+    }
+
+    .hero {
+        text-align: center;
+        padding: 5rem 0 4rem 0;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 24px;
+        margin-bottom: 3rem;
+        box-shadow: 0 8px 32px rgba(102, 126, 234, 0.08);
+    }
+
+    .hero h1 {
+        font-size: 3.2rem;
+        margin-bottom: 1.2rem;
+        color: #fff;
+        text-shadow: 2px 2px 8px rgba(102, 126, 234, 0.2);
+        letter-spacing: 1px;
+    }
+
+    .hero p {
+        font-size: 1.3rem;
+        color: rgba(255, 255, 255, 0.95);
+        margin-bottom: 2.2rem;
+    }
+
+    .cta-button {
+        background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+        color: white;
+        border: none;
+        padding: 1.1rem 2.2rem;
+        font-size: 1.15rem;
+        border-radius: 60px;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+        text-decoration: none;
+        display: inline-block;
+        box-shadow: 0 4px 16px rgba(255, 107, 107, 0.18);
+    }
+
+    .cta-button:hover {
+        transform: translateY(-4px) scale(1.04);
+        box-shadow: 0 12px 32px rgba(255, 107, 107, 0.28);
+    }
+
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .feature-card {
+        background: rgba(255, 255, 255, 0.98);
+        padding: 2.2rem 1.5rem;
+        border-radius: 18px;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 6px 24px rgba(102, 126, 234, 0.09);
+        border: 1px solid #e2e8f0;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-7px) scale(1.03);
+        box-shadow: 0 12px 36px rgba(102, 126, 234, 0.13);
+        border-color: #667eea;
+    }
+
+    .feature-icon {
+        font-size: 3.2rem;
+        margin-bottom: 1.2rem;
+        filter: drop-shadow(0 2px 6px #667eea33);
+    }
+
+    .demo-section {
+        background: rgba(255, 255, 255, 0.98);
+        padding: 3.5rem 2rem;
+        border-radius: 24px;
+        margin-bottom: 3rem;
+        box-shadow: 0 12px 36px rgba(102, 126, 234, 0.09);
+    }
+
+    .demo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2.5rem;
+        margin-top: 2.2rem;
+    }
+
+    .demo-card {
+        background: #f8f9fa;
+        padding: 2.2rem 1.5rem;
+        border-radius: 16px;
+        border: 2px solid #e9ecef;
+        box-shadow: 0 2px 12px rgba(102, 126, 234, 0.07);
+    }
+
+    .demo-card h3 {
+        color: #764ba2;
+        margin-bottom: 1.2rem;
+        font-size: 1.3rem;
+    }
+
+    .input-group {
+        margin-bottom: 1.2rem;
+    }
+
+    .input-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #667eea;
+    }
+
+    .input-group input,
+    .input-group textarea,
+    .input-group select {
+        width: 100%;
+        padding: 0.85rem;
+        border: 1px solid #cbd5e0;
+        border-radius: 10px;
+        font-size: 1.05rem;
+        background: #fff;
+        transition: border 0.3s;
+    }
+
+    .input-group input:focus,
+    .input-group textarea:focus,
+    .input-group select:focus {
+        border-color: #667eea;
+        outline: none;
+    }
+
+    .btn {
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        padding: 0.85rem 1.7rem;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 1.05rem;
+        font-weight: 600;
+        transition: background 0.3s, box-shadow 0.3s;
+        box-shadow: 0 2px 8px rgba(102, 126, 234, 0.09);
+    }
+
+    .btn:hover {
+        background: linear-gradient(90deg, #5a67d8 0%, #764ba2 100%);
+        box-shadow: 0 6px 18px rgba(102, 126, 234, 0.13);
+    }
+
+    .btn-secondary {
+        background: linear-gradient(90deg, #38a169 0%, #48bb78 100%);
+    }
+
+    .btn-secondary:hover {
+        background: linear-gradient(90deg, #2f855a 0%, #38a169 100%);
+    }
+
+    .aac-board {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.7rem;
+        margin-top: 1.2rem;
+    }
+
+    .aac-symbol {
+        background: #e2e8f0;
+        border: 2px solid #cbd5e0;
+        padding: 1.2rem 0.5rem;
+        text-align: center;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-size: 1.1rem;
+        font-weight: 500;
+        box-shadow: 0 2px 8px #667eea11;
+    }
+
+    .aac-symbol:hover,
+    .aac-symbol.active {
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-color: #667eea;
+    }
+
+    .output-area {
+        background: #f7fafc;
+        border: 2px solid #e2e8f0;
+        padding: 1.2rem;
+        border-radius: 10px;
+        margin-top: 1.2rem;
+        min-height: 100px;
+        font-size: 1.05rem;
+    }
+
+    .voice-controls {
+        display: flex;
+        gap: 1.2rem;
+        margin-top: 1.2rem;
+    }
+
+    .stats {
+        background: rgba(255, 255, 255, 0.98);
+        padding: 3.5rem 2rem;
+        border-radius: 24px;
+        margin-bottom: 3rem;
+        box-shadow: 0 8px 32px rgba(102, 126, 234, 0.08);
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2.5rem;
+        text-align: center;
+    }
+
+    .stat-card {
+        padding: 2.2rem 1.5rem;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        border-radius: 16px;
+        box-shadow: 0 2px 12px rgba(102, 126, 234, 0.09);
+    }
+
+    .stat-number {
+        font-size: 2.7rem;
+        font-weight: bold;
+        margin-bottom: 0.7rem;
+        letter-spacing: 1px;
+    }
+
+    .accessibility-controls {
+        background: rgba(255, 255, 255, 0.98);
+        padding: 2.2rem 1.5rem;
+        border-radius: 18px;
+        margin-bottom: 2.5rem;
+        box-shadow: 0 2px 12px rgba(102, 126, 234, 0.07);
+    }
+
+    .accessibility-controls h2 {
+        color: #764ba2;
+        margin-bottom: 1.2rem;
+    }
+
+    .control-group {
+        display: flex;
+        gap: 1.2rem;
+        margin-bottom: 1.2rem;
+        align-items: center;
+    }
+
+    .control-group label {
+        min-width: 150px;
+        font-weight: 600;
+        color: #667eea;
+    }
+
+    .slider {
+        flex: 1;
+    }
+
+    footer {
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-align: center;
+        padding: 2.5rem 0;
+        margin-top: 3rem;
+        border-radius: 0 0 24px 24px;
+        box-shadow: 0 -4px 24px rgba(102, 126, 234, 0.08);
+    }
+
+    @media (max-width: 900px) {
+        .container {
+            padding: 0 12px;
+        }
+
+        .features,
+        .demo-grid,
+        .stats-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+        }
+    }
+
+    @media (max-width: 600px) {
+        header {
+            padding: 0.7rem 0;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+        }
+
+        .hero {
+            padding: 2.5rem 0;
+        }
+
+        .demo-section,
+        .stats,
+        .accessibility-controls {
+            padding: 1.2rem 0.5rem;
+        }
+    }
+</style>
+<!-- ...existing code... -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communication Assistance Platform - Team Algonary</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        main {
+            margin-top: 80px;
+            padding: 2rem 0;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .demo-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .demo-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid #e9ecef;
+        }
+
+        .demo-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .input-group {
+            margin-bottom: 1rem;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .input-group input,
+        .input-group textarea,
+        .input-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #5a67d8;
+        }
+
+        .btn-secondary {
+            background: #38a169;
+        }
+
+        .btn-secondary:hover {
+            background: #2f855a;
+        }
+
+        .aac-board {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .aac-symbol {
+            background: #e2e8f0;
+            border: 2px solid #cbd5e0;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .aac-symbol:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .aac-symbol.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .output-area {
+            background: #f7fafc;
+            border: 2px solid #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            min-height: 100px;
+        }
+
+        .voice-controls {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .stats {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-card {
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 15px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .accessibility-controls {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .control-group {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            align-items: center;
+        }
+
+        .control-group label {
+            min-width: 150px;
+        }
+
+        .slider {
+            flex: 1;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Team Algonary</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#demo">Demo</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="home" class="hero">
+            <h1>Communication Assistance Platform</h1>
+            <p>Empowering individuals with speech disorders through innovative technology</p>
+            <a href="#demo" class="cta-button">Try Demo</a>
+        </section>
+
+        <section class="accessibility-controls">
+            <h2>Accessibility Settings</h2>
+            <div class="control-group">
+                <label for="fontSize">Font Size:</label>
+                <input type="range" id="fontSize" class="slider" min="12" max="24" value="16">
+                <span id="fontSizeValue">16px</span>
+            </div>
+            <div class="control-group">
+                <label for="contrast">High Contrast:</label>
+                <input type="checkbox" id="contrast">
+            </div>
+            <div class="control-group">
+                <label for="theme">Theme:</label>
+                <select id="theme">
+                    <option value="default">Default</option>
+                    <option value="dark">Dark Mode</option>
+                    <option value="colorblind">Colorblind Friendly</option>
+                </select>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🗣️</div>
+                <h3>Text-to-Speech</h3>
+                <p>Convert typed text into natural-sounding speech with customizable voices and speeds.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>AAC Support</h3>
+                <p>Symbol-based communication boards for expressing thoughts through images and text.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎤</div>
+                <h3>Speech Recognition</h3>
+                <p>Advanced AI that adapts to individual speech patterns and converts speech to text.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>AI Predictions</h3>
+                <p>Machine learning algorithms that predict phrases based on user behavior and context.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Multi-Device</h3>
+                <p>Works seamlessly across smartphones, tablets, and wearables with offline capabilities.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Privacy First</h3>
+                <p>Secure data encryption and anonymous usage options to protect user privacy.</p>
+            </div>
+        </section>
+
+        <section class="stats">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Impact Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">26.8M</div>
+                    <div>People with disabilities in India</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1.88M</div>
+                    <div>People with speech challenges</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">7%</div>
+                    <div>Of disabled population faces speech issues</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2.21%</div>
+                    <div>Of India's total population</div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="auth" class="demo-section">
+            <h2>User Account</h2>
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>Register</h3>
+                    <div class="input-group">
+                        <label for="regUsername">Username</label>
+                        <input type="text" id="regUsername" placeholder="Enter username">
+                    </div>
+                    <div class="input-group">
+                        <label for="regPassword">Password</label>
+                        <input type="password" id="regPassword" placeholder="Enter password">
+                    </div>
+                    <button class="btn" onclick="handleRegister()">Register</button>
+                    <p id="regStatus"></p>
+                </div>
+
+                <div class="demo-card">
+                    <h3>Login</h3>
+                    <div class="input-group">
+                        <label for="loginUsername">Username</label>
+                        <input type="text" id="loginUsername" placeholder="Enter username">
+                    </div>
+                    <div class="input-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" placeholder="Enter password">
+                    </div>
+                    <button class="btn" onclick="handleLogin()">Login</button>
+                    <button class="btn" onclick="handleLogout()">Logout</button>
+                    <p id="loginStatus"></p>
+                    <p id="currentUserInfo"></p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section id="demo" class="demo-section">
+            <h2>Interactive Demo</h2>
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>Text-to-Speech Demo</h3>
+                    <div class="input-group">
+                        <label for="ttsText">Enter text to convert to speech:</label>
+                        <textarea id="ttsText" rows="3"
+                            placeholder="Type your message here...">Hello, my name is John and I'm excited to communicate with you today!</textarea>
+                    </div>
+                    <div class="input-group">
+                        <label for="voiceSelect">Select Voice:</label>
+                        <select id="voiceSelect">
+                            <option value="">Select a voice...</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="speedSlider">Speech Speed:</label>
+                        <input type="range" id="speedSlider" min="0.5" max="2" step="0.1" value="1">
+                        <span id="speedValue">1.0x</span>
+                    </div>
+                    <div class="voice-controls">
+                        <button class="btn" onclick="speakText()">🔊 Speak</button>
+                        <button class="btn btn-secondary" onclick="pauseSpeech()">⏸️ Pause</button>
+                        <button class="btn" onclick="stopSpeech()">⏹️ Stop</button>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <h3>AAC Communication Board</h3>
+                    <p>Click symbols to build your message:</p>
+                    <div class="aac-board">
+                        <div class="aac-symbol" onclick="addToMessage('I', '👤')">
+                            <div style="font-size: 2rem;">👤</div>
+                            <div>I </div>
+                        </div>
+                        <div class="aac-symbol" onclick="addToMessage('want', '👋')">
+                            <div style="font-size: 2rem;">👋</div>
+                            <div>want</div>
+                        </div>
+                        <div class="aac-symbol" onclick="addToMessage('food', '🍎')">
+                            <div style="font-size: 2rem;">🍎</div>
+                            <div>food</div>
+                        </div>
+                        <div class="aac-symbol" onclick="addToMessage('water', '💧')">
+                            <div style="font-size: 2rem;">💧</div>
+                            <div>water</div>
+                        </div>
+                        <div class="aac-symbol" onclick="addToMessage('help', '🆘')">
+                            <div style="font-size: 2rem;">🆘</div>
+                            <div>help</div>
+                        </div>
+                        <div class="aac-symbol" onclick="addToMessage('yes', '✅')">
+                            <div style="font-size: 2rem;">✅</div>
+                            <div>yes</div>
+                        </div>
+                        <div class="aac-symbol" onclick="addToMessage('no', '❌')">
+                            <div style="font-size: 2rem;">❌</div>
+                            <div>no</div>
+                        </div>
+                        <div class="aac-symbol" onclick="addToMessage('thank you', '🙏')">
+                            <div style="font-size: 2rem;">🙏</div>
+                            <div>thank you</div>
+                        </div>
+                    </div>
+                    <div class="output-area" id="aacOutput">
+                        <strong>Your message:</strong> <span id="aacMessage"></span>
+                    </div>
+                    <div class="voice-controls">
+                        <button class="btn" onclick="speakAAC()">🔊 Speak Message</button>
+                        <button class="btn btn-secondary" onclick="clearAAC()">🗑️ Clear</button>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <h3>Speech Recognition Demo</h3>
+                    <p>Click to start voice recognition:</p>
+                    <div class="input-group">
+                        <button class="btn" id="startRecognition" onclick="startSpeechRecognition()">🎤 Start
+                            Listening</button>
+                        <button class="btn btn-secondary" id="stopRecognition" onclick="stopSpeechRecognition()"
+                            disabled>⏹️ Stop</button>
+                    </div>
+                    <div class="output-area" id="recognitionOutput">
+                        <strong>Recognized text will appear here...</strong>
+                    </div>
+                    <div class="input-group">
+                        <label>Recognition Status:</label>
+                        <span id="recognitionStatus">Ready</span>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <h3>Phrase Prediction</h3>
+                    <div class="input-group">
+                        <label for="predictText">Start typing for suggestions:</label>
+                        <input type="text" id="predictText" placeholder="Type here..." oninput="showPredictions()">
+                    </div>
+                    <div id="predictions" style="display: none;">
+                        <strong>Suggested phrases:</strong>
+                        <div id="predictionList"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="demo-section">
+            <h2>About Team Algonary</h2>
+            <p>We are students from Jodhpur Institute of Technology (JIET) {AAYESHA SAHA , HIMESH CHOUDHARY ,
+                MORYAWARDHAN SINGH KHICCHI, YASHASWI SONI } passionate about creating inclusive technology solutions.
+                Our Communication Assistance Platform aims to bridge communication gaps for individuals with speech
+                disorders, leveraging cutting-edge AI and machine learning technologies.</p>
+
+            <h3 style="margin-top: 2rem;">Key Technologies</h3>
+            <ul style="margin-left: 2rem; margin-top: 1rem;">
+                <li><strong>Python:</strong> Backend AI and machine learning algorithms</li>
+                <li><strong>HTML:</strong>Used HTML to design and structure the interactive web interface of our
+                    Communication Assistance Platform.</li>
+                <li><strong>CSS:</strong>Used to structure the platform’s interface, creating the foundation for
+                    features like text-to-speech, AAC boards, and accessibility controls.</li>
+                <li><strong>JavaScript:</strong> Interactive web interface and real-time features</li>
+                <li><strong>Web Speech API:</strong> Browser-based speech recognition and synthesis</li>
+                <li><strong>Machine Learning:</strong> Phrase prediction and pattern recognition</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem;">Problem Statement</h3>
+            <p>PWD-1003: Customizable Accessibility Interface - Creating solutions that adapt to individual needs and
+                provide comprehensive communication support for people with diverse speech disorders.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Team Algonary - Jodhpur Institute of Technology (JIET)</p>
+            <p>Communication Assistance Platform - Enhancing Accessibility through Customizable Solutions</p>
+        </div>
+    </footer>
+
+    <script>
+        // ================= API CONFIGURATION =================
+        const APIBASEURL = "http://localhost:5000/api";
+        let authToken = localStorage.getItem("authToken");
+        let currentUser = null;
+
+        // ================= AUTH FUNCTIONS ====================
+        async function registerUser(userData) {
+            try {
+                const response = await fetch(`${APIBASEURL}/auth/register`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(userData)
+                });
+                const data = await response.json();
+                if (response.ok) {
+                    localStorage.setItem("authToken", data.token);
+                    authToken = data.token;
+                    currentUser = data.user;
+                }
+                return data;
+            } catch (err) {
+                console.error("Registration error:", err);
+                throw err;
+            }
+        }
+
+        async function loginUser(credentials) {
+            try {
+                const response = await fetch(`${APIBASEURL}/auth/login`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(credentials)
+                });
+                const data = await response.json();
+                if (response.ok) {
+                    localStorage.setItem("authToken", data.token);
+                    authToken = data.token;
+                    currentUser = data.user;
+                }
+                return data;
+            } catch (err) {
+                console.error("Login error:", err);
+                throw err;
+            }
+        }
+
+        // =========== GENERIC API REQUEST HELPER =============
+        async function apiRequest(endpoint, options = {}) {
+            const config = {
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": authToken ? `Bearer ${authToken}` : ""
+                },
+                ...options
+            };
+            const res = await fetch(`${APIBASEURL}/${endpoint}`, config);
+            return await res.json();
+        }
+
+        // =============== MESSAGE FUNCTIONS ===================
+        async function saveMessage(messageData) {
+            return await apiRequest("messages", {
+                method: "POST",
+                body: JSON.stringify(messageData)
+            });
+        }
+
+        // =============== PHRASE FUNCTIONS ====================
+        async function getPhraseSuggestions(input, userId) {
+            const endpoint = `phrases/suggestions?input=${encodeURIComponent(input)}${userId ? `&userId=${encodeURIComponent(userId)}` : ""}`;
+            return await apiRequest(endpoint, { method: "GET" });
+        }
+
+        async function savePhrase(phraseData) {
+            return await apiRequest("phrases", {
+                method: "POST",
+                body: JSON.stringify(phraseData)
+            });
+        }
+
+        // =============== ANALYTICS FUNCTIONS =================
+        async function getAnalytics() {
+            return await apiRequest("analytics/overview", { method: "GET" });
+        }
+
+        // ================== LOGIN/REGISTER HANDLERS ==========
+        async function handleRegister() {
+            const usernameEl = document.getElementById("regUsername");
+            const passwordEl = document.getElementById("regPassword");
+            const statusEl = document.getElementById("regStatus");
+            const username = usernameEl ? usernameEl.value.trim() : "";
+            const password = passwordEl ? passwordEl.value.trim() : "";
+
+            if (!username || !password) {
+                if (statusEl) {
+                    statusEl.textContent = "Please enter username and password.";
+                    statusEl.style.color = "red";
+                }
+                return;
+            }
+
+            try {
+                const res = await registerUser({ username, password });
+                if (res.user && statusEl) {
+                    statusEl.textContent = "Registered and logged in as " + res.user.username;
+                    statusEl.style.color = "green";
+                    updateCurrentUserInfo();
+                } else if (statusEl) {
+                    statusEl.textContent = res.message || "Registration failed.";
+                    statusEl.style.color = "red";
+                }
+            } catch (e) {
+                console.error(e);
+                if (statusEl) {
+                    statusEl.textContent = "Registration error.";
+                    statusEl.style.color = "red";
+                }
+            }
+        }
+
+        async function handleLogin() {
+            const usernameEl = document.getElementById("loginUsername");
+            const passwordEl = document.getElementById("loginPassword");
+            const statusEl = document.getElementById("loginStatus");
+            const username = usernameEl ? usernameEl.value.trim() : "";
+            const password = passwordEl ? passwordEl.value.trim() : "";
+
+            if (!username || !password) {
+                if (statusEl) {
+                    statusEl.textContent = "Please enter username and password.";
+                    statusEl.style.color = "red";
+                }
+                return;
+            }
+
+            try {
+                const res = await loginUser({ username, password });
+                if (res.user && statusEl) {
+                    statusEl.textContent = "Logged in as " + res.user.username;
+                    statusEl.style.color = "green";
+                    updateCurrentUserInfo();
+                } else if (statusEl) {
+                    statusEl.textContent = res.message || "Login failed.";
+                    statusEl.style.color = "red";
+                }
+            } catch (e) {
+                console.error(e);
+                if (statusEl) {
+                    statusEl.textContent = "Login error.";
+                    statusEl.style.color = "red";
+                }
+            }
+        }
+
+        function handleLogout() {
+            localStorage.removeItem("authToken");
+            authToken = null;
+            currentUser = null;
+            updateCurrentUserInfo();
+
+            const loginStatus = document.getElementById("loginStatus");
+            if (loginStatus) {
+                loginStatus.textContent = "Logged out.";
+                loginStatus.style.color = "gray";
+            }
+        }
+
+        function updateCurrentUserInfo() {
+            const el = document.getElementById("currentUserInfo");
+            if (!el) return;
+            if (currentUser) {
+                el.textContent = "Current user: " + currentUser.username;
+            } else {
+                el.textContent = "Not logged in (guest mode).";
+            }
+        }
+
+        window.addEventListener("load", () => {
+            updateCurrentUserInfo();
+        });
+
+        // ================== TEXT-TO-SPEECH ===================
+        let synth = window.speechSynthesis;
+        let voices = [];
+        let currentUtterance = null;
+
+        function loadVoices() {
+            voices = synth.getVoices();
+            const voiceSelect = document.getElementById("voiceSelect");
+            if (!voiceSelect) return;
+            voiceSelect.innerHTML = '<option value="">Select a voice...</option>';
+            voices.forEach((voice, index) => {
+                const option = document.createElement("option");
+                option.value = index;
+                option.textContent = `${voice.name} (${voice.lang})`;
+                voiceSelect.appendChild(option);
+            });
+        }
+
+        if (speechSynthesis.onvoiceschanged !== undefined) {
+            speechSynthesis.onvoiceschanged = loadVoices;
+        }
+        window.addEventListener("load", loadVoices);
+
+        // save current TTS text to backend (only if logged in)
+        async function saveCurrentTTSMessage() {
+            if (!currentUser) {
+                console.warn("Not logged in; TTS message will not be saved.");
+                return;
+            }
+            const textEl = document.getElementById("ttsText");
+            if (!textEl) return;
+            const text = textEl.value.trim();
+            if (!text) return;
+
+            try {
+                await saveMessage({
+                    userId: currentUser.id,
+                    content: text,
+                    type: "tts"
+                });
+                console.log("TTS message saved to backend");
+            } catch (e) {
+                console.error("Failed to save TTS message:", e);
+            }
+        }
+
+        function speakText() {
+            const text = document.getElementById("ttsText").value;
+            const voiceIndex = document.getElementById("voiceSelect").value;
+            const speed = document.getElementById("speedSlider").value;
+            if (!text) return;
+
+            // save in background (only if logged in)
+            saveCurrentTTSMessage();
+
+            stopSpeech();
+            const utterance = new SpeechSynthesisUtterance(text);
+            if (voiceIndex !== "") {
+                utterance.voice = voices[voiceIndex];
+            }
+            utterance.rate = parseFloat(speed);
+            synth.speak(utterance);
+        }
+
+        function pauseSpeech() {
+            if (synth.speaking && !synth.paused) synth.pause();
+            else if (synth.paused) synth.resume();
+        }
+
+        function stopSpeech() {
+            if (synth.speaking) synth.cancel();
+        }
+
+        document.getElementById("speedSlider").addEventListener("input", function () {
+            document.getElementById("speedValue").textContent = this.value + "x";
+        });
+
+        // ==================== AAC BOARD ======================
+        let aacMessage = [];
+
+        function addToMessage(word) {
+            aacMessage.push(word);
+            const el = document.getElementById("aacMessage");
+            if (el) {
+                el.textContent = aacMessage.join(" ");
+            }
+        }
+
+        function speakAAC() {
+            const message = aacMessage.join(" ");
+            if (!message) return;
+
+            // save AAC message only if logged in
+            if (!currentUser) {
+                console.warn("Not logged in; AAC message will not be saved.");
+            } else {
+                saveMessage({
+                    userId: currentUser.id,
+                    content: message,
+                    type: "aac"
+                }).then(() => {
+                    console.log("AAC message saved");
+                }).catch(err => {
+                    console.error("Failed to save AAC message:", err);
+                });
+            }
+
+            const utterance = new SpeechSynthesisUtterance(message);
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function clearAAC() {
+            aacMessage = [];
+            const el = document.getElementById("aacMessage");
+            if (el) {
+                el.textContent = "";
+            }
+        }
+
+        // ================ SPEECH RECOGNITION =================
+        let recognition;
+        let isListening = false;
+
+        if ("webkitSpeechRecognition" in window) {
+            recognition = new webkitSpeechRecognition();
+        } else if ("SpeechRecognition" in window) {
+            recognition = new SpeechRecognition();
+        }
+
+        if (recognition) {
+            recognition.continuous = true;
+            recognition.interimResults = true;
+            recognition.lang = "en-US";
+
+            recognition.onstart = function () {
+                isListening = true;
+                document.getElementById("recognitionStatus").textContent = "Listening...";
+                document.getElementById("startRecognition").disabled = true;
+                document.getElementById("stopRecognition").disabled = false;
+            };
+
+            recognition.onresult = function (event) {
+                let finalTranscript = "";
+                let interimTranscript = "";
+                for (let i = event.resultIndex; i < event.results.length; i++) {
+                    const transcript = event.results[i][0].transcript;
+                    if (event.results[i].isFinal) finalTranscript += transcript;
+                    else interimTranscript += transcript;
+                }
+                document.getElementById("recognitionOutput").innerHTML =
+                    "<strong>Final:</strong> " + finalTranscript + "<br><strong>Interim:</strong> " + interimTranscript;
+
+                // save recognized speech only if logged in
+                if (finalTranscript.trim()) {
+                    if (!currentUser) {
+                        console.warn("Not logged in; recognized speech will not be saved.");
+                    } else {
+                        saveMessage({
+                            userId: currentUser.id,
+                            content: finalTranscript.trim(),
+                            type: "speech"
+                        }).then(() => {
+                            console.log("Recognized speech saved");
+                        }).catch(err => {
+                            console.error("Failed to save recognized speech:", err);
+                        });
+                    }
+                }
+            };
+
+            recognition.onend = function () {
+                isListening = false;
+                document.getElementById("recognitionStatus").textContent = "Ready";
+                document.getElementById("startRecognition").disabled = false;
+                document.getElementById("stopRecognition").disabled = true;
+            };
+
+            recognition.onerror = function (event) {
+                console.error("Speech recognition error:", event.error);
+                document.getElementById("recognitionStatus").textContent = "Error: " + event.error;
+            };
+        }
+
+        function startSpeechRecognition() {
+            if (recognition && !isListening) recognition.start();
+            else if (!recognition) alert("Speech recognition is not supported in this browser.");
+        }
+
+        function stopSpeechRecognition() {
+            if (recognition && isListening) recognition.stop();
+        }
+
+        // ============== PHRASE PREDICTION UI =================
+        const commonPhrases = {
+            "i": ["I am", "I want", "I need", "I like", "I have"],
+            "h": ["Hello", "How are you", "Help me", "Have a good day", "Happy"],
+            "th": ["Thank you", "The weather is", "This is", "That is", "Think about"],
+            "wh": ["What is", "Where is", "When will", "Why did", "Who is"],
+            "c": ["Can you", "Could you", "Come here", "Call me", "Congratulations"],
+            "g": ["Good morning", "Good afternoon", "Good evening", "Good night", "Goodbye"],
+            "p": ["Please help", "Please wait", "Please come", "Please call", "Please stop"]
+        };
+
+        function showPredictions() {
+            const input = document.getElementById("predictText").value.toLowerCase();
+            const predictionsDiv = document.getElementById("predictions");
+            const predictionList = document.getElementById("predictionList");
+
+            if (input.length < 1) {
+                predictionsDiv.style.display = "none";
+                return;
+            }
+
+            const matches = [];
+            for (const key in commonPhrases) {
+                if (key.startsWith(input)) {
+                    matches.push(...commonPhrases[key]);
+                }
+            }
+
+            if (matches.length === 0) {
+                predictionsDiv.style.display = "none";
+                return;
+            }
+
+            predictionList.innerHTML = matches
+                .slice(0, 5)
+                .map(phrase => `<div style="padding:0.5rem;background:#e2e8f0;margin:0.25rem 0;border-radius:4px;cursor:pointer;" onclick="selectPrediction('${phrase}')">${phrase}</div>`)
+                .join("");
+
+            predictionsDiv.style.display = "block";
+        }
+
+        function selectPrediction(phrase) {
+            document.getElementById("predictText").value = phrase;
+            document.getElementById("predictions").style.display = "none";
+
+            // save predicted phrase only if logged in
+            if (!currentUser) {
+                console.warn("Not logged in; predicted phrase will not be saved.");
+                return;
+            }
+
+            saveMessage({
+                userId: currentUser.id,
+                content: phrase,
+                type: "prediction"
+            }).then(() => {
+                console.log("Predicted phrase saved");
+            }).catch(err => {
+                console.error("Failed to save predicted phrase:", err);
+            });
+        }
+
+        // ============== ACCESSIBILITY CONTROLS ===============
+        document.getElementById("fontSize").addEventListener("input", function () {
+            const size = this.value + "px";
+            document.body.style.fontSize = size;
+            document.getElementById("fontSizeValue").textContent = size;
+        });
+
+        document.getElementById("contrast").addEventListener("change", function () {
+            document.body.style.filter = this.checked ? "contrast(150%)" : "none";
+        });
+
+        document.getElementById("theme").addEventListener("change", function () {
+            const theme = this.value;
+            switch (theme) {
+                case "dark":
+                    document.body.style.background = "linear-gradient(135deg, #2d3748 0%, #1a202c 100%)";
+                    document.body.style.color = "#fff";
+                    break;
+                case "colorblind":
+                    document.body.style.background = "linear-gradient(135deg, #4a5568 0%, #2d3748 100%)";
+                    break;
+                default:
+                    document.body.style.background = "linear-gradient(135deg, #667eea 0%, #764ba2 100%)";
+                    document.body.style.color = "#333";
+            }
+        });
+
+        // ============== SMOOTH SCROLL NAVIGATION =============
+        document.querySelectorAll("a[href^='#']").forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute("href"));
+                if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>
